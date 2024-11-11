@@ -18,6 +18,7 @@
 
    body {
     background-color: var(--body-background);
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
   }
@@ -26,20 +27,19 @@
   .login-page {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: var(--background-color);
+    height: 100vh;
+    background-color: var(--body-background);
   }
   
   .login-container {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 40px;
+    box-shadow: 10px;
   }
   
   .login-box {
-    background-color: var(--background-color);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -180,3 +180,158 @@
     background-color: var(--hover-color);
   }
   
+ /* Sidebar.css */
+.sidebar { 
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: width 0.5s;
+}
+
+.sidebar.open {
+  width: 40px;
+}
+
+.sidebar.open .toggle-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar .toggle-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  justify-content: start;
+  margin-left: 5px;
+}
+
+.sidebar .sidebar-content {
+  margin-top: 20px;
+}
+
+.sidebar.open .sidebar-item {
+  margin: 10px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding: 10px 0px;
+}
+
+.sidebar .sidebar-item {
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 0px;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 190px;
+    z-index: 999;
+    position: absolute;
+    top: 0;          
+    left: 0;
+    height: 100vh;
+  }
+  
+  .sidebar.open {
+    width: 40px;
+  }
+}
+
+
+/* TopBar.css */
+.topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 20px;
+background-color: #444;
+color: #fff;
+}
+
+.profile {
+cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+   margin-left: 80px;
+
+  }
+  
+}
+
+
+/* Layout.css */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Dashboard.css */
+.dashboard {
+padding: 18px;
+background-color: #f4f4f4;
+flex-grow: 1;
+}
+
+.dashboard h3 {
+font-size: 20px;
+margin-bottom: 20px;
+color: var(--primary-color);
+}
+
+.dashboard-widgets {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.widget {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+width: calc(33.333% - 20px);
+min-width: 200px;
+}
+
+.widget h3 {
+font-size: 18px;
+margin-bottom: 10px;
+color: #444;
+}
+
+.widget p {
+font-size: 14px;
+color: #666;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+   margin-left: 80px;
+  }
+  
+}
